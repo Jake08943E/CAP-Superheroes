@@ -1,6 +1,5 @@
 # CAP CAPMongo
 _out
-*.db
 *.sqlite
 connection.properties
 default-*.json
@@ -22,7 +21,6 @@ mta_archives/
 .DS_Store
 *.orig
 *.log
-.env
 *.iml
 *.flattened-pom.xml
 

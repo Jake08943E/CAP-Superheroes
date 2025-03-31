@@ -5,4 +5,4 @@ cds.on("bootstrap", app=> {
      app.use(proxy())
 });
 
-module.experts = cds.server;
+module.exports = cds.server;
