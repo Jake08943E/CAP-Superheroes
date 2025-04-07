@@ -1,5 +1,10 @@
 # CAP CAPMongo
 _out
+=======
+# CAP CAP-superheroes
+_out
+*.db
+
 *.sqlite
 connection.properties
 default-*.json
@@ -21,9 +26,15 @@ mta_archives/
 .DS_Store
 *.orig
 *.log
+
+
 *.iml
 *.flattened-pom.xml
 
 # IDEs
 # .vscode
 # .idea
+
+
+# @cap-js/cds-typer
+@cds-models

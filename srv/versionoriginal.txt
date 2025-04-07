@@ -1,0 +1,61 @@
+async function _recuperarsuperheroe(req) {
+
+    await client.connect();
+    var dataBase = await client.db(sDbName);
+    var superheroes = await dataBase.collection('superheroes');
+
+    var ilimit, iOffset, oFilter;
+    
+    
+    console.log(req.query.SELECT.limit);
+    
+    if (req.query.SELECT.limit){
+        ilimit = req.query.SELECT.limit.rows.val;
+
+        if(req.query.SELECT.limit){
+            iOffset = req.query.SELECT.limit.offset.val
+        } else{
+            iOffset = 0;
+        }
+    } else{
+        ilimit = 9999;
+        iOffset = 0;
+    }
+
+        console.log(req.query.SELECT.one);
+    if (req.query.SELECT.one) {
+        var sId = req.query.SELECT.from.ref[0].where[2].val;
+        oFilter= {"_id": ObjectId(sId)};
+    }
+
+    var result = await superheroes.find(oFilter).limit(ilimit + iOffset).toArray();
+
+    /*for(var i = 0; i < result.length; i++) {
+        result[i].id = result[i]._id.toString();
+    }*/
+
+    //result = result.slice(iOffset);
+
+    return result;
+}
+
+
+async function _actualizarsuperheroe(req) {
+    await client.connect();
+    var dataBase = await client.db(sDbName);
+    var superheroes = await dataBase.collection('superheroes');
+
+    var oSuperHeroe = req.data;
+    var sId = ObjectId(oSuperHeroe.id);
+    delete oSuperHeroe.id; 
+
+    var oResult = await superheroes.updateOne({_id: sId}, {$set: oSuperHeroe});
+
+    if(oResult.modifiedCount > 0) {
+        return oSuperHeroe;
+    } else {
+        return oResult;
+    }
+
+
+}

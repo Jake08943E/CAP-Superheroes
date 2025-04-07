@@ -1,19 +1,28 @@
 {
+<<<<<<< HEAD
 	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
 	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
 
 	// List of extensions which should be recommended for users of this workspace.
+=======
+>>>>>>> c98280e (hicimos las opciones delete, update, create y read, ademas agregamos un txt de versiones originales las cuales no se necesitaron a chatgpt para arreglar errores y por ultimo en data model.cds agregamos una key string)
 	"recommendations": [
 		"SAPSE.vscode-cds",
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
 		"mechatroner.rainbow-csv",
+<<<<<<< HEAD
 		"humao.rest-client",
 		"alexcvzz.vscode-sqlite",
 		"hbenl.vscode-mocha-test-adapter",
 		"sdras.night-owl"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+=======
+		"qwtel.sqlite-viewer",
+		"humao.rest-client"
+	],
+>>>>>>> c98280e (hicimos las opciones delete, update, create y read, ademas agregamos un txt de versiones originales las cuales no se necesitaron a chatgpt para arreglar errores y por ultimo en data model.cds agregamos una key string)
 	"unwantedRecommendations": [
 
 	]
